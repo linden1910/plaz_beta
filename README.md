@@ -21,3 +21,7 @@ git pull
 
 alias python=/usr/bin/python2.7
 
+time out with second comit when tring to run any g code
+DBusException: org.freedesktop.DBus.Error.ServiceUnknown: The name :1.129 was not provided by any .service files
+
+

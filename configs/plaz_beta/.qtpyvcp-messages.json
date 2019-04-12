@@ -1,1 +1,65 @@
-[]
+[
+    {
+        "file": "/home/plaz/Git/Dev-QtpyVcp/qtpyvcp/sim/example_gcode/qtpyvcp.ngc", 
+        "interp_mode": "Waiting", 
+        "message": " ENGRAVING QtPyVCP", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555048236.03605, 
+        "type": "info"
+    }, 
+    {
+        "file": "/home/plaz/Git/Dev-QtpyVcp/qtpyvcp/sim/example_gcode/qtpyvcp.ngc", 
+        "interp_mode": "Idle", 
+        "message": "Linear move on line 10 would exceed Z's positive limit", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555048236.06671, 
+        "type": "error"
+    }, 
+    {
+        "file": "/home/plaz/Git/Dev-QtpyVcp/qtpyvcp/sim/example_gcode/qtpyvcp.ngc", 
+        "interp_mode": "Idle", 
+        "message": "Linear move on line 10 would exceed joint 2's positive limit", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555048236.173996, 
+        "type": "error"
+    }, 
+    {
+        "file": "/home/plaz/Git/Dev-QtpyVcp/qtpyvcp/sim/example_gcode/qtpyvcp.ngc", 
+        "interp_mode": "Idle", 
+        "message": "invalid params in linear command", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555048236.374158, 
+        "type": "error"
+    }, 
+    {
+        "file": "/home/plaz/NGC/Gusset/gusset_2_inch.ngc", 
+        "interp_mode": "Idle", 
+        "message": "Linear move on line 11 would exceed Z's positive limit", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555048281.579535, 
+        "type": "error"
+    }, 
+    {
+        "file": "/home/plaz/NGC/Gusset/gusset_2_inch.ngc", 
+        "interp_mode": "Idle", 
+        "message": "Linear move on line 11 would exceed joint 2's positive limit", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555048281.775061, 
+        "type": "error"
+    }, 
+    {
+        "file": "/home/plaz/NGC/Gusset/gusset_2_inch.ngc", 
+        "interp_mode": "Idle", 
+        "message": "invalid params in linear command", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555048281.973775, 
+        "type": "error"
+    }
+]

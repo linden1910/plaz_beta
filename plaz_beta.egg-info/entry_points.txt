@@ -1,0 +1,6 @@
+[gui_scripts]
+plaz_beta = plaz_beta:main
+
+[qtpyvcp.vcp]
+plaz_beta = plaz_beta
+

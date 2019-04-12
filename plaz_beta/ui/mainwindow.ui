@@ -18,7 +18,7 @@
     <item>
      <widget class="QFrame" name="frame">
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::WinPanel</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
@@ -33,7 +33,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -49,7 +49,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -63,17 +63,30 @@
           <height>461</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(240, 240, 240);</string>
+        </property>
         <property name="tabPosition">
          <enum>QTabWidget::South</enum>
         </property>
-        <widget class="QWidget" name="tab">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab1">
          <attribute name="title">
-          <string>Tab 1</string>
+          <string>Plot</string>
          </attribute>
         </widget>
-        <widget class="QWidget" name="tab_2">
+        <widget class="QWidget" name="tab2">
          <attribute name="title">
-          <string>Tab 2</string>
+          <string>File</string>
          </attribute>
         </widget>
        </widget>
@@ -86,17 +99,35 @@
           <height>461</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(240, 240, 240);</string>
+        </property>
         <property name="tabPosition">
          <enum>QTabWidget::South</enum>
         </property>
-        <widget class="QWidget" name="tab_3">
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="tab1">
          <attribute name="title">
-          <string>Tab 1</string>
+          <string>DRO</string>
          </attribute>
         </widget>
-        <widget class="QWidget" name="tab_4">
+        <widget class="QWidget" name="tab4">
          <attribute name="title">
-          <string>Tab 2</string>
+          <string>Jog + MDI</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Torch Controls</string>
          </attribute>
         </widget>
        </widget>
@@ -111,7 +142,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -127,7 +158,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -143,7 +174,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -159,7 +190,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -175,7 +206,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -191,7 +222,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -207,7 +238,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -223,7 +254,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -239,7 +270,7 @@
         </rect>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::WinPanel</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>

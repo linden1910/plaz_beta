@@ -61,5 +61,41 @@
         "task_state": "On", 
         "timestamp": 1555048281.973775, 
         "type": "error"
+    }, 
+    {
+        "file": "/home/plaz/Git/Dev-QtpyVcp/qtpyvcp/sim/example_gcode/qtpyvcp.ngc", 
+        "interp_mode": "Waiting", 
+        "message": " ENGRAVING QtPyVCP", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555226807.325332, 
+        "type": "info"
+    }, 
+    {
+        "file": "/home/plaz/Git/Dev-QtpyVcp/qtpyvcp/sim/example_gcode/qtpyvcp.ngc", 
+        "interp_mode": "Idle", 
+        "message": "Linear move on line 287 would exceed X's positive limit", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555226807.366095, 
+        "type": "error"
+    }, 
+    {
+        "file": "/home/plaz/Git/Dev-QtpyVcp/qtpyvcp/sim/example_gcode/qtpyvcp.ngc", 
+        "interp_mode": "Idle", 
+        "message": "Linear move on line 287 would exceed joint 0's positive limit", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555226807.557609, 
+        "type": "error"
+    }, 
+    {
+        "file": "/home/plaz/Git/Dev-QtpyVcp/qtpyvcp/sim/example_gcode/qtpyvcp.ngc", 
+        "interp_mode": "Idle", 
+        "message": "invalid params in linear command", 
+        "task_mode": "Auto", 
+        "task_state": "On", 
+        "timestamp": 1555226807.763991, 
+        "type": "error"
     }
 ]

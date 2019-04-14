@@ -28,7 +28,7 @@
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>171</width>
+         <width>291</width>
          <height>111</height>
         </rect>
        </property>
@@ -38,13 +38,107 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="ActionButton" name="actionbutton_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>90</width>
+          <height>90</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>DejaVu Sans</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:estop&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'EMO Out' if ch[0] else 'EMO In'&quot;, &quot;name&quot;: &quot;EMO Lable&quot;}]</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>machine.estop.toggle</string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton_10">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>20</y>
+          <width>79</width>
+          <height>74</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Power
+On</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[]</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>machine.power.on</string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton_9">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>20</y>
+          <width>79</width>
+          <height>74</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Power
+Off</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[]</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>machine.power.off</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QFrame" name="frame_3">
        <property name="geometry">
         <rect>
          <x>10</x>
          <y>130</y>
-         <width>1201</width>
+         <width>1221</width>
          <height>461</height>
         </rect>
        </property>
@@ -57,10 +151,10 @@
        <widget class="QTabWidget" name="tabWidget">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>751</width>
-          <height>461</height>
+          <x>10</x>
+          <y>10</y>
+          <width>771</width>
+          <height>441</height>
          </rect>
         </property>
         <property name="font">
@@ -83,11 +177,378 @@
          <attribute name="title">
           <string>Plot</string>
          </attribute>
+         <widget class="GcodeBackplot" name="gcodebackplot">
+          <property name="geometry">
+           <rect>
+            <x>-20</x>
+            <y>0</y>
+            <width>661</width>
+            <height>411</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+         </widget>
+         <widget class="QFrame" name="frame_14">
+          <property name="geometry">
+           <rect>
+            <x>640</x>
+            <y>0</y>
+            <width>111</width>
+            <height>401</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="QWidget" name="verticalLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>111</width>
+             <height>411</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="ActionButton" name="Pview">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>DejaVu Sans</family>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>ISO View</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>vtkbackplot.clearLivePlot</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="ActionButton" name="Xview">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>DejaVu Sans</family>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>View X</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>setViewX</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="ActionButton" name="Yview">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>DejaVu Sans</family>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>View Y</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>vtkbackplot.setViewY</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="ActionButton" name="Zview">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>DejaVu Sans</family>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>View Z</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>vtkbackplot.setViewZ</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="ActionButton" name="zoomin">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>DejaVu Sans</family>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Zoom In</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>gcodebackplot.zoomIn</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="ActionButton" name="zoomout">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>DejaVu Sans</family>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Zoom Out</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>vtkbackplot.zoomOut</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="ActionButton" name="Cview">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>DejaVu Sans</family>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Clear Plot</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>vtkbackplot.clearLivePlot</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab2">
          <attribute name="title">
           <string>File</string>
          </attribute>
+         <widget class="FileSystemTable" name="filesystemtable">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>0</y>
+            <width>731</width>
+            <height>341</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="hiddenColumns" stdset="0">
+           <string>2</string>
+          </property>
+          <attribute name="verticalHeaderDefaultSectionSize">
+           <number>50</number>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="horizontalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>340</y>
+            <width>661</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="spacing">
+            <number>20</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="navParent">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Open
+Parent</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="navUp">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Up</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="navDown">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Down</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="navSelect">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Select</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </widget>
        <widget class="QTabWidget" name="tabWidget_2">
@@ -95,8 +556,8 @@
          <rect>
           <x>766</x>
           <y>-1</y>
-          <width>431</width>
-          <height>461</height>
+          <width>441</width>
+          <height>451</height>
          </rect>
         </property>
         <property name="font">
@@ -113,17 +574,618 @@
          <enum>QTabWidget::South</enum>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab1">
          <attribute name="title">
           <string>DRO</string>
          </attribute>
+         <widget class="QFrame" name="frame_15">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>421</width>
+            <height>201</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="QWidget" name="gridLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>19</y>
+             <width>401</width>
+             <height>171</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Absolute</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::PlainText</enum>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="DROWidget" name="drowidget_5">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="DROWidget" name="drowidget_3">
+              <property name="font">
+               <font>
+                <pointsize>25</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="referenceType" stdset="0">
+               <enum>DROWidget::Relative</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLabel" name="label_2">
+              <property name="font">
+               <font>
+                <pointsize>30</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>X</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_3">
+              <property name="font">
+               <font>
+                <pointsize>25</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Relative</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QLabel" name="label_5">
+              <property name="font">
+               <font>
+                <pointsize>30</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Y</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QLabel" name="label_4">
+              <property name="font">
+               <font>
+                <pointsize>30</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Z</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="DROWidget" name="drowidget_4">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="DROWidget" name="drowidget_2">
+              <property name="font">
+               <font>
+                <pointsize>25</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="referenceType" stdset="0">
+               <enum>DROWidget::Relative</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="DROWidget" name="drowidget_6">
+              <property name="font">
+               <font>
+                <pointsize>25</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="referenceType" stdset="0">
+               <enum>DROWidget::Relative</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="DROWidget" name="drowidget_10">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab4">
          <attribute name="title">
           <string>Jog + MDI</string>
          </attribute>
+         <widget class="QFrame" name="frame_16">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>340</y>
+            <width>281</width>
+            <height>80</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="MDIEntry" name="mdientry">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>30</y>
+             <width>181</width>
+             <height>29</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="mdi_pbutton">
+           <property name="geometry">
+            <rect>
+             <x>220</x>
+             <y>20</y>
+             <width>50</width>
+             <height>50</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>MDI
+Enter</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QFrame" name="frame_13">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>421</width>
+            <height>281</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="QWidget" name="gridLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>331</width>
+             <height>261</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item row="3" column="1">
+             <widget class="ActionButton" name="actionbutton_16">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>70</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>X
+Neg</string>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>machine.jog.axis:x,neg</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="ActionButton" name="actionbutton_21">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>70</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Y
+Pos</string>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>machine.jog.axis:y,pos</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="ActionButton" name="actionbutton_18">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>70</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Y
+Neg</string>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>machine.jog.axis:y,neg</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="ActionButton" name="actionbutton_20">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>50</width>
+                <height>70</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16999</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>X
+Pos</string>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>machine.jog.axis:x,pos</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="ActionButton" name="actionbutton_22">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>70</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Z
+UP</string>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>machine.jog.axis:z,pos</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="DROWidget" name="drowidget_7">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="referenceType" stdset="0">
+               <enum>DROWidget::Relative</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="DROWidget" name="drowidget">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="referenceType" stdset="0">
+               <enum>DROWidget::Relative</enum>
+              </property>
+              <property name="axis" stdset="0">
+               <enum>DROWidget::Y</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="DROWidget" name="drowidget_8">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="referenceType" stdset="0">
+               <enum>DROWidget::Relative</enum>
+              </property>
+              <property name="axis" stdset="0">
+               <enum>DROWidget::Z</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="ActionButton" name="actionbutton_19">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>70</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Z
+Down</string>
+              </property>
+              <property name="actionName" stdset="0">
+               <string>machine.jog.axis:z,neg</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label">
+              <property name="font">
+               <font>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>X axis</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string> Y axis</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QLabel" name="label_8">
+              <property name="font">
+               <font>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Z axis</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="ActionSlider" name="actionslider">
+           <property name="geometry">
+            <rect>
+             <x>370</x>
+             <y>30</y>
+             <width>31</width>
+             <height>191</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="actionName" stdset="0">
+            <string>machine.jog.set-linear-speed</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_9">
+           <property name="geometry">
+            <rect>
+             <x>350</x>
+             <y>250</y>
+             <width>71</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Jog Speed</string>
+           </property>
+          </widget>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -135,9 +1197,9 @@
       <widget class="QFrame" name="frame_4">
        <property name="geometry">
         <rect>
-         <x>1220</x>
+         <x>1239</x>
          <y>130</y>
-         <width>120</width>
+         <width>101</width>
          <height>461</height>
         </rect>
        </property>
@@ -147,13 +1209,129 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="ActionButton" name="actionbutton_12">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>370</y>
+          <width>80</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Stop</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>program.abort </string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>80</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Cycle
+Start</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>program.run</string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton_11">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>280</y>
+          <width>80</width>
+          <height>84</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Resume</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>program.resume</string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>100</y>
+          <width>80</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Step</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>program.step</string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton_13">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>190</y>
+          <width>80</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Pause</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>program.pause</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QFrame" name="frame_5">
        <property name="geometry">
         <rect>
-         <x>190</x>
+         <x>310</x>
          <y>10</y>
-         <width>261</width>
+         <width>371</width>
          <height>111</height>
         </rect>
        </property>
@@ -163,13 +1341,129 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="ActionButton" name="actionbutton_7">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>20</y>
+          <width>79</width>
+          <height>74</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Home
+Y</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[]</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>machine.home.axis:y</string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton_6">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>20</y>
+          <width>79</width>
+          <height>74</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Home
+X</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[]</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>machine.home.axis:x </string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton_8">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>20</y>
+          <width>79</width>
+          <height>74</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Home
+Z</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[]</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>machine.home.axis:z</string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton_5">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>79</width>
+          <height>74</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'All\\nHomed' if ch[0] else 'Home\\nAll'&quot;, &quot;name&quot;: &quot;home all text&quot;}]</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>machine.home.all</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QFrame" name="frame_6">
        <property name="geometry">
         <rect>
-         <x>460</x>
+         <x>690</x>
          <y>10</y>
-         <width>301</width>
+         <width>191</width>
          <height>111</height>
         </rect>
        </property>
@@ -179,13 +1473,61 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="DialogButton" name="dialogbutton_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>79</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Set Part
+ Zero </string>
+        </property>
+        <property name="dialogName" stdset="0">
+         <string>set_work_offsets</string>
+        </property>
+       </widget>
+       <widget class="MDIButton" name="mdibutton">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>20</y>
+          <width>79</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Go To 
+Part Zero</string>
+        </property>
+        <property name="MDICommand" stdset="0">
+         <string>G0 X0 Y0 Z0</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QFrame" name="frame_7">
        <property name="geometry">
         <rect>
-         <x>1220</x>
+         <x>1229</x>
          <y>10</y>
-         <width>120</width>
+         <width>111</width>
          <height>111</height>
         </rect>
        </property>
@@ -195,13 +1537,47 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="ActionButton" name="actionbutton_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>90</width>
+          <height>90</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>DejaVu Sans</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:estop&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'EMO Out' if ch[0] else 'EMO In'&quot;, &quot;name&quot;: &quot;EMO Lable&quot;}]</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>machine.estop.toggle</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QFrame" name="frame_8">
        <property name="geometry">
         <rect>
-         <x>769</x>
+         <x>1020</x>
          <y>10</y>
-         <width>441</width>
+         <width>191</width>
          <height>111</height>
         </rect>
        </property>
@@ -211,6 +1587,57 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="ActionButton" name="actionbutton_15">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>79</width>
+          <height>70</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Torch
+On</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>coolant.flood.on</string>
+        </property>
+       </widget>
+       <widget class="ActionButton" name="actionbutton_14">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>20</y>
+          <width>79</width>
+          <height>70</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Torch
+Off</string>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>coolant.flood.off</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QFrame" name="frame_9">
        <property name="geometry">
@@ -218,7 +1645,7 @@
          <x>10</x>
          <y>600</y>
          <width>371</width>
-         <height>80</height>
+         <height>71</height>
         </rect>
        </property>
        <property name="frameShape">
@@ -227,6 +1654,42 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>10</y>
+          <width>101</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Feed Override</string>
+        </property>
+       </widget>
+       <widget class="ActionSlider" name="actionslider_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>341</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="actionName" stdset="0">
+         <string>machine.feed-override.set</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QFrame" name="frame_10">
        <property name="geometry">
@@ -234,7 +1697,7 @@
          <x>390</x>
          <y>600</y>
          <width>371</width>
-         <height>80</height>
+         <height>71</height>
         </rect>
        </property>
        <property name="frameShape">
@@ -249,8 +1712,8 @@
         <rect>
          <x>770</x>
          <y>600</y>
-         <width>441</width>
-         <height>80</height>
+         <width>461</width>
+         <height>71</height>
         </rect>
        </property>
        <property name="frameShape">
@@ -263,9 +1726,9 @@
       <widget class="QFrame" name="frame_12">
        <property name="geometry">
         <rect>
-         <x>1220</x>
+         <x>1239</x>
          <y>600</y>
-         <width>120</width>
+         <width>101</width>
          <height>80</height>
         </rect>
        </property>
@@ -314,6 +1777,243 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GcodeBackplot</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.gcode_backplot.gcode_backplot</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DialogButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
+  </customwidget>
+  <customwidget>
+   <class>FileSystemTable</class>
+   <extends>QTableView</extends>
+   <header>qtpyvcp.widgets.input_widgets.file_system</header>
+  </customwidget>
+  <customwidget>
+   <class>MDIButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
+  </customwidget>
+  <customwidget>
+   <class>MDIEntry</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionSlider</class>
+   <extends>QSlider</extends>
+   <header>qtpyvcp.widgets.input_widgets.action_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.action_button</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DROWidget</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.dro_widget</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Pview</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodebackplot</receiver>
+   <slot>setViewP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>715</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Xview</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodebackplot</receiver>
+   <slot>setViewX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>715</x>
+     <y>237</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Yview</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodebackplot</receiver>
+   <slot>setViewY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>715</x>
+     <y>297</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Zview</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodebackplot</receiver>
+   <slot>setViewZ()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>715</x>
+     <y>357</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoomin</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodebackplot</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>715</x>
+     <y>417</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoomout</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodebackplot</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>715</x>
+     <y>477</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Cview</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodebackplot</receiver>
+   <slot>clearLivePlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>715</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mdi_pbutton</sender>
+   <signal>clicked()</signal>
+   <receiver>mdientry</receiver>
+   <slot>submit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1181</x>
+     <y>514</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>967</x>
+     <y>524</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>navUp</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>selectPrevious()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>560</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>406</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>navDown</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>selectNext()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>560</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>406</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>navParent</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>viewParentDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>560</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>406</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>navSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>openSelectedItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>655</x>
+     <y>560</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>406</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -56,6 +56,9 @@
           <bold>true</bold>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="checkable">
          <bool>true</bool>
         </property>
@@ -66,7 +69,7 @@
          <bool>false</bool>
         </property>
         <property name="rules" stdset="0">
-         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:estop&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'EMO Out' if ch[0] else 'EMO In'&quot;, &quot;name&quot;: &quot;EMO Lable&quot;}]</string>
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:estop&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'EMO In' if ch[0] else 'EMO Out'&quot;, &quot;name&quot;: &quot;EMO Lable&quot;}]</string>
         </property>
         <property name="actionName" stdset="0">
          <string>machine.estop.toggle</string>
@@ -449,6 +452,9 @@ Off</string>
           <property name="hiddenColumns" stdset="0">
            <string>2</string>
           </property>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>200</number>
+          </attribute>
           <attribute name="verticalHeaderDefaultSectionSize">
            <number>50</number>
           </attribute>
@@ -554,8 +560,8 @@ Parent</string>
        <widget class="QTabWidget" name="tabWidget_2">
         <property name="geometry">
          <rect>
-          <x>766</x>
-          <y>-1</y>
+          <x>770</x>
+          <y>-10</y>
           <width>441</width>
           <height>451</height>
          </rect>
@@ -586,7 +592,7 @@ Parent</string>
             <x>10</x>
             <y>10</y>
             <width>421</width>
-            <height>201</height>
+            <height>271</height>
            </rect>
           </property>
           <property name="frameShape">
@@ -601,7 +607,7 @@ Parent</string>
              <x>10</x>
              <y>19</y>
              <width>401</width>
-             <height>171</height>
+             <height>231</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout">
@@ -734,6 +740,9 @@ Parent</string>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
+              <property name="axis" stdset="0">
+               <enum>DROWidget::Y</enum>
+              </property>
              </widget>
             </item>
             <item row="3" column="1">
@@ -747,6 +756,9 @@ Parent</string>
               </property>
               <property name="referenceType" stdset="0">
                <enum>DROWidget::Relative</enum>
+              </property>
+              <property name="axis" stdset="0">
+               <enum>DROWidget::Y</enum>
               </property>
              </widget>
             </item>
@@ -762,6 +774,9 @@ Parent</string>
               <property name="referenceType" stdset="0">
                <enum>DROWidget::Relative</enum>
               </property>
+              <property name="axis" stdset="0">
+               <enum>DROWidget::Z</enum>
+              </property>
              </widget>
             </item>
             <item row="4" column="0">
@@ -776,10 +791,74 @@ Parent</string>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
+              <property name="axis" stdset="0">
+               <enum>DROWidget::Z</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="StatusLabel" name="statuslabel_2">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3">
+             <widget class="StatusLabel" name="statuslabel_3">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QLabel" name="label_11">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Velocity</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="StatusLabel" name="statuslabel_6">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
              </widget>
             </item>
            </layout>
           </widget>
+         </widget>
+         <widget class="GcodeEditor" name="gcodeeditor">
+          <property name="geometry">
+           <rect>
+            <x>15</x>
+            <y>290</y>
+            <width>411</width>
+            <height>121</height>
+           </rect>
+          </property>
          </widget>
         </widget>
         <widget class="QWidget" name="tab4">
@@ -1229,7 +1308,7 @@ Down</string>
          <string>Stop</string>
         </property>
         <property name="actionName" stdset="0">
-         <string>program.abort </string>
+         <string>program.abort</string>
         </property>
        </widget>
        <widget class="ActionButton" name="actionbutton">
@@ -1247,6 +1326,10 @@ Down</string>
           <weight>75</weight>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(150, 255, 150);
+selection-background-color: rgb(255, 85, 0);</string>
         </property>
         <property name="text">
          <string>Cycle
@@ -1555,6 +1638,9 @@ Part Zero</string>
           <bold>true</bold>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 60, 0)</string>
+        </property>
         <property name="checkable">
          <bool>true</bool>
         </property>
@@ -1565,7 +1651,7 @@ Part Zero</string>
          <bool>false</bool>
         </property>
         <property name="rules" stdset="0">
-         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:estop&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'EMO Out' if ch[0] else 'EMO In'&quot;, &quot;name&quot;: &quot;EMO Lable&quot;}]</string>
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:estop&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'EMO In' if ch[0] else 'EMO Out'&quot;, &quot;name&quot;: &quot;EMO Lable&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:estop&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Sheet&quot;, &quot;expression&quot;: &quot;'background-color: rgb(255, 0, 0)' if ch[0] else 'background-color: rgb(255, 60, 0)'&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
         </property>
         <property name="actionName" stdset="0">
          <string>machine.estop.toggle</string>
@@ -1658,9 +1744,9 @@ Off</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>10</y>
+          <y>6</y>
           <width>101</width>
-          <height>17</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="font">
@@ -1679,15 +1765,77 @@ Off</string>
          <rect>
           <x>10</x>
           <y>30</y>
-          <width>341</width>
+          <width>321</width>
           <height>31</height>
          </rect>
+        </property>
+        <property name="maximum">
+         <number>200</number>
         </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
         <property name="actionName" stdset="0">
          <string>machine.feed-override.set</string>
+        </property>
+       </widget>
+       <widget class="StatusLabel" name="statuslabel_4">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>0</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Noto Sans</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="toolTipDuration">
+         <number>-3</number>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="margin">
+         <number>-6</number>
+        </property>
+        <property name="indent">
+         <number>0</number>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[
+    {
+        &quot;channels&quot;: [
+            {
+                &quot;url&quot;: &quot;status:feedrate&quot;,
+                &quot;trigger&quot;: true,
+                &quot;type&quot;: &quot;float&quot;
+            }
+        ],
+        &quot;expression&quot;: &quot;'{:.0%}'.format(ch[0])&quot;,
+        &quot;name&quot;: &quot;New Rule&quot;,
+        &quot;property&quot;: &quot;Text&quot;
+    }
+]</string>
         </property>
        </widget>
       </widget>
@@ -1706,6 +1854,69 @@ Off</string>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="StatusLabel" name="statuslabel_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>351</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>DejaVu Sans</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:file&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Loaded File &gt; ' + ch[0].split('/')[-1] if ch[0] else 'No File Loaded'&quot;, &quot;name&quot;: &quot;Current File&quot;}]</string>
+        </property>
+       </widget>
+       <widget class="StatusLabel" name="statuslabel_24">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>103</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_mode?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Mode&quot;}]</string>
+        </property>
+       </widget>
+       <widget class="StatusLabel" name="statuslabel_18">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>40</y>
+          <width>95</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_in_spindle&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Tool {}'.format(ch[0])&quot;, &quot;name&quot;: &quot;Tool in Spindle&quot;}]</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QFrame" name="frame_11">
        <property name="geometry">
@@ -1779,12 +1990,6 @@ Off</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GcodeBackplot</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.gcode_backplot.gcode_backplot</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>DialogButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
@@ -1793,11 +1998,6 @@ Off</string>
    <class>FileSystemTable</class>
    <extends>QTableView</extends>
    <header>qtpyvcp.widgets.input_widgets.file_system</header>
-  </customwidget>
-  <customwidget>
-   <class>MDIButton</class>
-   <extends>QPushButton</extends>
-   <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
   </customwidget>
   <customwidget>
    <class>MDIEntry</class>
@@ -1810,15 +2010,37 @@ Off</string>
    <header>qtpyvcp.widgets.input_widgets.action_slider</header>
   </customwidget>
   <customwidget>
+   <class>DROWidget</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.dro_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>StatusLabel</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.status_label</header>
+  </customwidget>
+  <customwidget>
+   <class>MDIButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
+  </customwidget>
+  <customwidget>
+   <class>GcodeBackplot</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.gcode_backplot.gcode_backplot</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>GcodeEditor</class>
+   <extends>QFrame</extends>
+   <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>DROWidget</class>
-   <extends>QLabel</extends>
-   <header>qtpyvcp.widgets.display_widgets.dro_widget</header>
   </customwidget>
  </customwidgets>
  <resources/>
